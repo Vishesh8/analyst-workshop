@@ -1,7 +1,7 @@
-USE CATALOG `dbdemos_vishesh`;
-USE SCHEMA `contest_mock`;
-
 CREATE OR REPLACE MATERIALIZED VIEW sports_by_state
+(
+  CONSTRAINT valid_sport EXPECT (c.contest_sport IS NOT NULL) ON VIOLATION DROP ROW
+)
 AS
 select c.contest_sport, u.origin_state, count(distinct u.user_id) as user_count
 from users u
