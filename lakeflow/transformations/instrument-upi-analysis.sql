@@ -1,5 +1,5 @@
-CREATE OR REPLACE MATERIALIZED VIEW upi_transactions
+CREATE OR REPLACE MATERIALIZED VIEW amount_upi_transactions
 AS
 select *
-from cost_by_instrument
+from amount_by_instrument
 where lower(trim(instrument_type)) = 'upi'
