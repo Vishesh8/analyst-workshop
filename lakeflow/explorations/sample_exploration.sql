@@ -8,6 +8,11 @@
 
 -- COMMAND ----------
 
+USE CATALOG dbdemos_vishesh;
+USE SCHEMA contest_mock;
+
+-- COMMAND ----------
+
 -- !!! Before performing any data analysis, make sure to run the pipeline to materialize the sample datasets. The tables referenced in this notebook depend on that step.
 
 SELECT * from wallet_tx;
