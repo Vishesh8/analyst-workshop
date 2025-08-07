@@ -1,0 +1,200 @@
+{
+  "datasets": [
+    {
+      "name": "1264132e",
+      "displayName": "contests_metric_view",
+      "asset_name": "dbdemos_vishesh.contest_mock.contests_metric_view",
+      "catalog": "dbdemos_vishesh",
+      "schema": "contest_mock"
+    },
+    {
+      "name": "e7eee826",
+      "displayName": "users",
+      "queryLines": [
+        "SELECT * FROM dbdemos_vishesh.default.users"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "94b594bb",
+      "displayName": "summary",
+      "layout": [
+        {
+          "widget": {
+            "name": "32362c29",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "1264132e",
+                  "fields": [
+                    {
+                      "name": "Gender",
+                      "expression": "`Gender`"
+                    },
+                    {
+                      "name": "measure(Average Entry Amount)",
+                      "expression": "MEASURE(`Average Entry Amount`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Gender",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Gender"
+                },
+                "y": {
+                  "fieldName": "measure(Average Entry Amount)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Average Entry Amount"
+                }
+              },
+              "frame": {
+                "title": "Average Entry Amount by Gender",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "93bf64a0",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "1264132e",
+                  "fields": [
+                    {
+                      "name": "Preferred Payment Method",
+                      "expression": "`Preferred Payment Method`"
+                    },
+                    {
+                      "name": "measure(Total Wallet Amount)",
+                      "expression": "MEASURE(`Total Wallet Amount`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Preferred Payment Method",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Preferred Payment Method"
+                },
+                "y": {
+                  "fieldName": "measure(Total Wallet Amount)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Total Wallet Amount"
+                }
+              },
+              "frame": {
+                "title": "Total Wallet Amount by Preferred Payment Method",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "8018e0b8",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "1264132e",
+                  "fields": [
+                    {
+                      "name": "measure(Total Prize Pool)",
+                      "expression": "MEASURE(`Total Prize Pool`)"
+                    },
+                    {
+                      "name": "Contest Type",
+                      "expression": "`Contest Type`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "measure(Total Prize Pool)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Total Prize Pool"
+                },
+                "color": {
+                  "fieldName": "Contest Type",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Contest Type"
+                }
+              },
+              "frame": {
+                "title": "Total Prize Pool by Contest Type",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 12,
+            "width": 6,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    }
+  }
+}
